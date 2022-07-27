@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
+<link rel="stylesheet" href="{% static 'css/Product_View.css' %}"/>
 {% block content %}
+<div class="Product-Block">
 <h1>{{ title }}</h1>
-<!--<p>{% if description != None and description != '' %}{{description}}{% else %}description Coming soon {%endif %}</p>-->
+<hr />
+<p>${{price}} </p>
+<p>Color: {{ color }}</p>
+<p>Shape: {{shape}}</p>
+<p>Material: {{material}}</p>
+<p>Size: {{size}}</p>
+</div>
 {% endblock %} 
