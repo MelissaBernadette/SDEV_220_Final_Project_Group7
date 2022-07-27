@@ -4,10 +4,35 @@
 {% block content %}
 <div class="row my-4">
     <div class="col-md-6 offset-md-3 p-3 bg-white">
-        <h3>Order {{ objects.title }}</h3>
+        <h3>Order {{ title }}</h3>
         <hr>
+        <table>
+            <tr>
+                <th>Price</th>
+                <th> <br/> </th>
+                <th>Color</th>
+                <th> </th>
+                <th>Material</th>
+                <th></th>
+                <th>Size</th>
+                <th><br /></th>
+                <th>Shape</th>
+            </tr>
+            <tr>
+                <td>{{price}}</td>
+                <td> <br/></td>
+                <td>{{color}}</td>
+                <td><br/></td>
+                <td>{{material}}</td>
+                <td><br/></td>
+                <td>{{size}}</td>
+                <td><br/></td>
+                <td>{{shape}}</td>
+            </tr>
+        </table>
         <form>
             {% csrf_token %}
+            <input type="number" placeholder="Ammount" value="price">
             <input class="btn btn-info" type="submit" value="Make Order">
         </form>
     </div>

@@ -10,7 +10,7 @@ from .decorators import auth_users, allowed_users
 
 
 def product_detail_view(request, pk):
-    obj = Product.objects.get(id=1)
+    obj = Product.objects.get(id=pk)
     context = {
         "title": obj.title,
         "price": obj.price,
@@ -87,7 +87,15 @@ def products(request):
 
 @login_required(login_url="user-login")
 def product_detail(request, pk):
-    context = {}
+    obj = Product.objects.get(id=pk)
+    context = {
+        "title": obj.title,
+        "price": obj.price,
+        "color": obj.color.capitalize(),
+        "shape": obj.shape.capitalize(),
+        "material": obj.material.capitalize(),
+        "size": obj.size.capitalize(),
+    }
     return render(request, "dashboard/products_detail.html", context)
 
 
