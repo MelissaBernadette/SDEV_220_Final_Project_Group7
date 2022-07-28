@@ -94,7 +94,7 @@ def product_detail(request, pk):
         "color": obj.color.capitalize(),
         "shape": obj.shape.capitalize(),
         "material": obj.material.capitalize(),
-        "size": obj.size.capitalize(),
+        "size": obj.size,
     }
     return render(request, "dashboard/products_detail.html", context)
 

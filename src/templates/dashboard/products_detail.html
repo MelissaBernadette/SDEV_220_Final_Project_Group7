@@ -31,6 +31,7 @@
                 <td><br/></td>
                 <td>{{shape}}</td>
             </tr>
+            
         </table>
         <form>
             {% csrf_token %}
@@ -38,5 +39,20 @@
             <input class="btn btn-info" type="submit" value="Make Order">
         </form>
     </div>
+    
+</div>
+<div>
+    <table class="table table-borderless">
+        <tr>
+            <th scope="col">Tax:</th>
+            <td />
+            <td />
+            <td />
+            <td>{{Total}}</td>
+        </tr>
+        <tr>
+            <th scope="col">Total:</th>
+        </tr>
+    </table>
 </div>
 {% endblock %}
