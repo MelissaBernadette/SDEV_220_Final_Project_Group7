@@ -6,6 +6,8 @@ Kira Buck, Jaecob Dobler, Melissa Haney
 
 # Getting Started
 Open our Homepage at _____
+Login or create an account
+Now depending on your account status you have different authorization to different parts of the website. All users are able to view the products at the endpoint /products/detail/(product #)
 
 # Users
 On launch of the application all users are directed to login or create an account. 
@@ -24,7 +26,7 @@ products:
  
  
 # Templates / Html & Bootstrap
- partials:
+ ## partials:
  
   nav.html: this document adds the nav bar to the top of the Base.html
   
