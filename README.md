@@ -28,10 +28,15 @@ products:
  
 # Templates / Html & Bootstrap
  partials:
+ 
   nav.html: this document adds the nav bar to the top of the Base.html
+  
  products:
+ 
   detail.html: this document is used when the client goes to the endpoint /products/detail/<#>
+  
  user:
+ 
   login.html: this document structures the login form.
   logout.html: this document tells django to logout the user.
   profile_update.html: this document allows users to update their profile.
