@@ -54,6 +54,14 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.customer}-{self.title}'
+
+#simplfying Vendor
+class Source(models.Model):
+    source = models.CharField(max_length=120, null=True)
+    source_email = models.CharField(max_length=120, null=True)
+
+    def __str__(self):
+        return f'{self.source}'
     
 class Vendor(models.Model):
     title = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)

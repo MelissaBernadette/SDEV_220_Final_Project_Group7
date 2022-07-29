@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, Order, Vendor
+from .models import Product, Order, Vendor, Source
 from .forms import ProductForm, OrderForm, VendorForm
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -21,6 +21,14 @@ def product_detail_view(request, pk):
     }
     return render(request, "product/detail.html", context)
 
+def source_detail_view(request, pk):
+    obj = Source.objects.get(id=pk)
+    context = {
+        "source": obj.source,
+        "source_email": obj.source_email,
+    }
+    return render(request, "source/detail.html", context)
+
 
 @login_required(login_url="user-login")
 def index(request):
@@ -30,8 +38,8 @@ def index(request):
     order_count = order.count()
     customer = User.objects.filter(groups=2)
     customer_count = customer.count()
-    vendor = Vendor.objects.all()
-    vendor_count = vendor.count()
+    sources = Source.objects.all()
+    sources_count = sources.count()
 
     if request.method == "POST":
         form = OrderForm(request.POST)
@@ -49,7 +57,7 @@ def index(request):
         "product_count": product_count,
         "order_count": order_count,
         "customer_count": customer_count,
-        "vendor_count": vendor_count,
+        "sources_count": sources_count,
     }
     return render(request, "dashboard/index.html", context)
 
@@ -62,8 +70,8 @@ def products(request):
     customer_count = customer.count()
     order = Order.objects.all()
     order_count = order.count()
-    vendor = Vendor.objects.all()
-    vendor_count = vendor.count()
+    sources = Source.objects.all()
+    sources_count = sources.count()
     product_quantity = Product.objects.filter(title="")
     if request.method == "POST":
         form = ProductForm(request.POST)
@@ -80,7 +88,7 @@ def products(request):
         "customer_count": customer_count,
         "product_count": product_count,
         "order_count": order_count,
-        "vendor_count": vendor_count,
+        "sources_count": sources_count,
     }
     return render(request, "dashboard/products.html", context)
 

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/Source_View.css' %}"/>
+{% block content %}
+<div class="Source-Block">
+<h1>{{ source }}</h1>
+<hr />
+<p>Email: {{ source_email }}</p>
+</div>
+{% endblock %} 
