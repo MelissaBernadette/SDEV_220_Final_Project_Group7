@@ -10,12 +10,9 @@ Open our Homepage at _____
 # Users
 On launch of the application all users are directed to login or create an account. 
 
-Customer:
- Customer clients are users who do not have admin control.
-Employee:
- Employee clients are users who have access to the dashboard and products.
-Admin:
- Admin clients are users who have complete access to modify and manipulate the products and users.
+Customer: Customer clients are users who do not have admin control.
+Employee: Employee clients are users who have access to the dashboard and products.
+Admin: Admin clients are users who have complete access to modify and manipulate the products and users.
  
 # Applications
 
@@ -38,11 +35,17 @@ products:
  user:
  
   login.html: this document structures the login form.
+  
   logout.html: this document tells django to logout the user.
+  
   profile_update.html: this document allows users to update their profile.
+  
   profile.html: this document shows a users profile.
+  
   register.html: this document allows users to register a new user.
- Base.html: this document is the base file for the server.
+  
+ Base.html: this document is the base template for the server all other documents extend this one.
+ 
  home.html: this is the homepage of the site.
 
 
