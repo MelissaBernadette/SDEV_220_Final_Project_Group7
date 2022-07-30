@@ -1,0 +1,32 @@
+{% extends 'partials/base.html' %}
+{% block title %}Source/Vendor Page{% endblock %}
+
+
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for source in source %}
+                <tr>
+                    <th scope="row"><a class="btn btn-info btn-sm"
+                            href="{% url 'dashboard-source-detail' source.id %}">View</a></th>
+                    <td>{{ source }}</td>
+                    <td>{{ source.source_email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

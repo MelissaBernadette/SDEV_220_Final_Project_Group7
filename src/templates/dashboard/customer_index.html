@@ -25,7 +25,6 @@
                         <thead class="bg-info text-white">
                             <tr>
                                 <th scope="col">Product</th>
-                                <th scope="col">Category</th>
                                 <th scope="col">Quantity</th>
                             </tr>
                         </thead>
@@ -33,8 +32,7 @@
                             {% for order in order %}
                             {% if order.customer == user %}
                             <tr>
-                                <td>{{ order.name }}</td>
-                                <td>{{ order.name.category }}</td>
+                                <td>{{ order.title }}</td>
                                 <td>{{ order.order_quantity }}</td>
                             </tr>
                             {% endif %}

@@ -1,5 +1,6 @@
 {% extends 'partials/base.html' %}
 {% block title %}Products Page{% endblock %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 {% include 'partials/topside.html' %}
@@ -17,6 +18,7 @@
             <hr>
             <form method="POST">
                 {% csrf_token %}
+                {{ form|crispy }}
                 <input class="btn btn-success btn-block" type="submit" value="Add">
             </form>
         </div>
@@ -26,23 +28,14 @@
             <thead class="bg-info text-white">
                 <tr>
                     <th scope="col">Title</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Shape</th>
-                    <th scope="col">Material</th>
-                    <th scope="col">Color</th>
-                    <th scope="col">Size</th>
                     <th scope="col">Quantity</th>
+                    <th scope="col">Activity</th>
                 </tr>
             </thead>
             <tbody>
                 {% for product in product %}
                 <tr>
                     <td>{{ product.title }}</td>
-                    <td>{{ product.price }}</td>
-                    <td>{{ product.shape }}</td>
-                    <td>{{ product.material }}</td>
-                    <td>{{ product.color }}</td>
-                    <td>{{ product.size }}</td>
                     <td>{{ product.quantity }}</td>
                     <td>
                         <a class="btn btn-info btn-sm mr-2"
