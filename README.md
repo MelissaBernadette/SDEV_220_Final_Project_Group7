@@ -24,6 +24,9 @@ arthaus:
 products:
  This application includes the models, views, and urls of the products for the database. 
  
+users:
+ This applications includes user/customer information.
+ 
  
 # Templates / Html & Bootstrap
  ## partials:
